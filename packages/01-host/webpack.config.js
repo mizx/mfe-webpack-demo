@@ -38,7 +38,8 @@ module.exports = {
       library: { type: "var", name: "host_app" },
       filename: "remoteEntry.js",
       remotes: {
-        mui_app: "mui_app"
+        app_mui: "app_mui",
+        app_sc: "app_sc"
       },
       shared: ["react", "react-dom"]
     }),

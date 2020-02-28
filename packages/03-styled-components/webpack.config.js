@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 module.exports = {
   entry: "./src/index",
@@ -32,6 +33,15 @@ module.exports = {
   },
 
   plugins: [
+    new ModuleFederationPlugin({
+      name: "app_sc",
+      library: { type: "var", name: "app_sc" },
+      filename: "remoteEntry.js",
+      exposes: {
+        Button: "./src/Button"
+      },
+      shared: ["react", "react-dom"]
+    }),
     new HtmlWebpackPlugin({
       template: "./public/index.html"
     })

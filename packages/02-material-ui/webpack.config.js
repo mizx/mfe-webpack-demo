@@ -34,8 +34,8 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "mui_app",
-      library: { type: "var", name: "mui_app" },
+      name: "app_mui",
+      library: { type: "var", name: "app_mui" },
       filename: "remoteEntry.js",
       exposes: {
         Dialog: "./src/Dialog"
