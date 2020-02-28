@@ -16,6 +16,7 @@
   },
   "scripts": {
     "start": "webpack --watch",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "serve": "serve dist -p 3002"
   }
 }
