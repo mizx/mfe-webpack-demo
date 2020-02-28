@@ -1,10 +1,10 @@
-import { Button } from "./Button";
+import Button from "./Button";
 import React from "react";
 
 function App() {
   return (
     <div>
-      <h1>Styled Component Button</h1>
+      <h1>Styled Component App</h1>
       <Button>&#128133; Button</Button>
     </div>
   );
