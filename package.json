@@ -1,0 +1,7 @@
+{
+  "name": "mfe-demo-root",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ]
+}
