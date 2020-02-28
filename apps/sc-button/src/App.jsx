@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <h1>Styled Component Button</h1>
-      <Button>SC Button</Button>
+      <Button>&#128133; Button</Button>
     </div>
   );
 }
