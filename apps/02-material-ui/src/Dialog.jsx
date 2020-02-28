@@ -6,7 +6,7 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import React from "react";
 
-function AlertDialog() {
+function Dialog() {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -45,4 +45,4 @@ function AlertDialog() {
   );
 }
 
-export default AlertDialog;
+export default Dialog;
