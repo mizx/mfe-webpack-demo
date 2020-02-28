@@ -1,5 +1,5 @@
 {
-  "name": "app-host",
+  "name": "01-host",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
