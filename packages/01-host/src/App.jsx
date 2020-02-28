@@ -11,7 +11,7 @@ function App() {
         <Dialog />
       </React.Suspense>
       <React.Suspense fallback="Loading Styled Component Button...">
-        <Button>Pretty Button</Button>
+        <Button>&#128133; Button</Button>
       </React.Suspense>
     </div>
   );
