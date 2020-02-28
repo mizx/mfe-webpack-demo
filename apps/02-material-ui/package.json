@@ -11,7 +11,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "serve": "^11.3.0",
-    "webpack": "^4.41.6",
+    "webpack": "git://github.com/webpack/webpack.git#dev-1",
     "webpack-cli": "^3.3.11"
   },
   "scripts": {
