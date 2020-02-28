@@ -1,5 +1,5 @@
 import Button from "@material-ui/core/Button";
-import DialogComponent from "@material-ui/core/Dialog";
+import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
@@ -22,7 +22,7 @@ function DialogComponent() {
       <Button variant="contained" color="primary" onClick={handleClickOpen}>
         Open Dialog
       </Button>
-      <DialogComponent open={open} onClose={handleClose}>
+      <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Dialog Example</DialogTitle>
         <DialogContent>
           <DialogContentText>
@@ -40,7 +40,7 @@ function DialogComponent() {
             Woot
           </Button>
         </DialogActions>
-      </DialogComponent>
+      </Dialog>
     </div>
   );
 }
