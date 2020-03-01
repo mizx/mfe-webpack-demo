@@ -9,12 +9,6 @@ const useStyles = makeStyles(theme =>
   createStyles({
     root: {
       display: "flex"
-    },
-    toolbar: theme.mixins.toolbar,
-    content: {
-      flexGrow: 1,
-      backgroundColor: theme.palette.background.default,
-      padding: theme.spacing(3)
     }
   })
 );
@@ -27,10 +21,7 @@ function App() {
       <CssBaseline />
       <div className={classes.root}>
         <SideNav />
-        <div className={classes.content}>
-          <div className={classes.toolbar} />
-          <Routes />
-        </div>
+        <Routes />
       </div>
     </HashRouter>
   );
