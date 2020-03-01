@@ -1,19 +1,19 @@
 import { Route, Switch } from "react-router-dom";
 
-import IndexPage from "./pages/index";
-import Page1 from "./pages/page1";
-import Page2 from "./pages/page2";
-import Page3 from "./pages/page3";
+import DialogPage from "./pages/dialog-page";
+import IndexPage from "./pages/index-page";
 import React from "react";
+import RoutingPage from "./pages/routing-page";
+import UiLibraryPage from "./pages/ui-library-page";
 
 const Routes = () => (
   <Switch>
     <Route path="/" exact={true}>
       <IndexPage />
     </Route>
-    <Route path="/page1" component={Page1} />
-    <Route path="/page2" component={Page2} />
-    <Route path="/page3" component={Page3} />
+    <Route path="/dialog" component={DialogPage} />
+    <Route path="/ui-library" component={UiLibraryPage} />
+    <Route path="/routing" component={RoutingPage} />
   </Switch>
 );
 

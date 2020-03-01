@@ -52,14 +52,14 @@ export default function SideNav() {
         <ListItem button component={Link} to="/">
           <ListItemText primary="Main" />
         </ListItem>
-        <ListItem button component={Link} to="/page1">
+        <ListItem button component={Link} to="/dialog">
           <ListItemText primary="Dialog" />
         </ListItem>
-        <ListItem button component={Link} to="/page3/foo">
-          <ListItemText primary="Routing" />
+        <ListItem button component={Link} to="/ui-library">
+          <ListItemText primary="UI Library" />
         </ListItem>
-        <ListItem button component={Link} to="/page2">
-          <ListItemText primary="Styled Components" />
+        <ListItem button component={Link} to="/routing/foo">
+          <ListItemText primary="Routing" />
         </ListItem>
       </List>
     </Drawer>

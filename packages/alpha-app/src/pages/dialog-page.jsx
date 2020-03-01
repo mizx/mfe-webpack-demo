@@ -3,12 +3,12 @@ import React from "react";
 
 const Dialog = React.lazy(() => import("bravo_app/Dialog"));
 
-const Page1 = () => (
+const DialogPage = () => (
   <Page title="Dialog Demo">
-    <React.Suspense fallback="Loading Material UI Dialog...">
+    <React.Suspense fallback="Loading Dialog...">
       <Dialog />
     </React.Suspense>
   </Page>
 );
 
-export default Page1;
+export default DialogPage;

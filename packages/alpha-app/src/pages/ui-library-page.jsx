@@ -3,7 +3,7 @@ import React from "react";
 
 const Button = React.lazy(() => import("charlie_app/Button"));
 
-const Page2 = () => (
+const UiLibraryPage = () => (
   <Page title="UI Library Demo">
     <React.Suspense fallback="Loading Styled Component Button...">
       <Button>&#128133; Button</Button>
@@ -11,4 +11,4 @@ const Page2 = () => (
   </Page>
 );
 
-export default Page2;
+export default UiLibraryPage;

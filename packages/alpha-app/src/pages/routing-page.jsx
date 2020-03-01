@@ -3,7 +3,7 @@ import React from "react";
 
 const Tabs = React.lazy(() => import("bravo_app/Tabs"));
 
-const Page3 = () => (
+const RoutingPage = () => (
   <Page title="Routing Demo">
     <React.Suspense fallback="Loading Tabs...">
       <Tabs />
@@ -11,4 +11,4 @@ const Page3 = () => (
   </Page>
 );
 
-export default Page3;
+export default RoutingPage;
