@@ -4,6 +4,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  ListSubheader,
   Typography,
   createStyles,
   makeStyles
@@ -49,6 +50,7 @@ export default function SideNav() {
       </div>
       <Divider />
       <List>
+        <ListSubheader>Demo Pages</ListSubheader>
         <ListItem button component={Link} to="/">
           <ListItemText primary="Main" />
         </ListItem>
@@ -60,6 +62,16 @@ export default function SideNav() {
         </ListItem>
         <ListItem button component={Link} to="/routing/foo">
           <ListItemText primary="Routing" />
+        </ListItem>
+        <ListSubheader>Apps</ListSubheader>
+        <ListItem button component="a" href="http://localhost:3001">
+          <ListItemText primary="Alpha" secondary="http://localhost:3001" />
+        </ListItem>
+        <ListItem button component="a" href="http://localhost:3002">
+          <ListItemText primary="Bravo" secondary="http://localhost:3002" />
+        </ListItem>
+        <ListItem button component="a" href="http://localhost:3003">
+          <ListItemText primary="Charlie" secondary="http://localhost:3003" />
         </ListItem>
       </List>
     </Drawer>
