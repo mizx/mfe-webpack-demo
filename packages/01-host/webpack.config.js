@@ -41,6 +41,10 @@ module.exports = {
         app_mui: "app_mui",
         app_sc: "app_sc"
       },
+      exposes: {
+        SideNav: "./src/SideNav",
+        Title: "./src/Title"
+      },
       shared: ["react", "react-dom"]
     }),
     new HtmlWebpackPlugin({
