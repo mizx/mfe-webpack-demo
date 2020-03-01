@@ -1,8 +1,8 @@
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 
 import AppBar from "@material-ui/core/AppBar";
-import { BrowserRouter } from "react-router-dom";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import { HashRouter } from "react-router-dom";
 import React from "react";
 import Routes from "./Routes";
 import SideNav from "./SideNav";
@@ -33,7 +33,7 @@ function App() {
   const classes = useStyles();
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <CssBaseline />
       <div className={classes.root}>
         <AppBar position="fixed" className={classes.appBar}>
@@ -49,7 +49,7 @@ function App() {
           <Routes />
         </div>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
