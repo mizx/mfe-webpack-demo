@@ -2,7 +2,7 @@ import Markdown from "../Markdown";
 import Page from "../Page";
 import React from "react";
 import { Typography } from "@material-ui/core";
-import Welcome from "./Welcome.md";
+import Welcome from "../docs/Welcome.md";
 
 const IndexPage = () => (
   <Page title="Module Federation Demo">

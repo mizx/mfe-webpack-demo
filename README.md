@@ -7,7 +7,10 @@ yarn start
 
 Open [http://localhost:3001](http://localhost:3001).
 
-Other apps:
+The demo is annotated so navigate through the demos and apps available.
 
-- [http://localhost:3002](http://localhost:3002)
-- [http://localhost:3003](http://localhost:3003)
+Included apps:
+
+- Alpha App: [http://localhost:3001](http://localhost:3001)
+- Bravo App: [http://localhost:3002](http://localhost:3002)
+- Charlie App: [http://localhost:3003](http://localhost:3003)
