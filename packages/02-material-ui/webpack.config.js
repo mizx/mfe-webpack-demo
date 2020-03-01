@@ -37,10 +37,13 @@ module.exports = {
       name: "app_mui",
       library: { type: "var", name: "app_mui" },
       filename: "remoteEntry.js",
+      remotes: {
+        host_app: "host_app"
+      },
       exposes: {
         Dialog: "./src/Dialog"
       },
-      shared: ["react", "react-dom"]
+      shared: ["react", "react-dom", "@material-ui/core"]
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",

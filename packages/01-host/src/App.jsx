@@ -1,11 +1,9 @@
-import { createStyles, makeStyles } from "@material-ui/core/styles";
+import { CssBaseline, createStyles, makeStyles } from "@material-ui/core";
 
-import CssBaseline from "@material-ui/core/CssBaseline";
 import { HashRouter } from "react-router-dom";
 import React from "react";
 import Routes from "./Routes";
 import SideNav from "./SideNav";
-import Title from "./Title";
 
 const useStyles = makeStyles(theme =>
   createStyles({

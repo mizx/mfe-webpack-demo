@@ -45,7 +45,7 @@ module.exports = {
         SideNav: "./src/SideNav",
         Title: "./src/Title"
       },
-      shared: ["react", "react-dom"]
+      shared: ["react", "react-dom", "@material-ui/core"]
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html"
