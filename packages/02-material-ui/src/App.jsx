@@ -3,17 +3,16 @@ import React from "react";
 import { ThemeProvider } from "@material-ui/core";
 import { theme } from "./theme";
 
-const Title = React.lazy(() => import("host_app/Title"));
+const Page = React.lazy(() => import("host_app/Page"));
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div>
-        <React.Suspense fallback={null}>
-          <Title title="Material UI App" />
-        </React.Suspense>
-        <Dialog />
-      </div>
+      <React.Suspense fallback={null}>
+        <Page title="Material UI App">
+          <Dialog />
+        </Page>
+      </React.Suspense>
     </ThemeProvider>
   );
 }

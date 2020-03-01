@@ -37,6 +37,9 @@ module.exports = {
       name: "app_sc",
       library: { type: "var", name: "app_sc" },
       filename: "remoteEntry.js",
+      remotes: {
+        host_app: "host_app"
+      },
       exposes: {
         Button: "./src/Button"
       },

@@ -43,7 +43,7 @@ module.exports = {
       },
       exposes: {
         SideNav: "./src/SideNav",
-        Title: "./src/Title"
+        Page: "./src/Page"
       },
       shared: ["react", "react-dom", "@material-ui/core"]
     }),
