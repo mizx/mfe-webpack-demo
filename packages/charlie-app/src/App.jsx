@@ -1,7 +1,7 @@
 import Button from "./Button";
 import React from "react";
 
-const Page = React.lazy(() => import("host_app/Page"));
+const Page = React.lazy(() => import("alpha_app/Page"));
 
 function App() {
   return (

@@ -38,12 +38,12 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "host_app",
-      library: { type: "var", name: "host_app" },
+      name: "alpha_app",
+      library: { type: "var", name: "alpha_app" },
       filename: "remoteEntry.js",
       remotes: {
-        app_mui: "app_mui",
-        app_sc: "app_sc"
+        bravo_app: "bravo_app",
+        charlie_app: "charlie_app"
       },
       exposes: {
         SideNav: "./src/SideNav",

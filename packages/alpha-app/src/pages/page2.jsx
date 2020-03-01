@@ -1,7 +1,7 @@
 import Page from "../Page";
 import React from "react";
 
-const Button = React.lazy(() => import("app_sc/Button"));
+const Button = React.lazy(() => import("charlie_app/Button"));
 
 const Page2 = () => (
   <Page title="UI Library Demo">

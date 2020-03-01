@@ -34,11 +34,11 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "app_sc",
-      library: { type: "var", name: "app_sc" },
+      name: "charlie_app",
+      library: { type: "var", name: "charlie_app" },
       filename: "remoteEntry.js",
       remotes: {
-        host_app: "host_app"
+        alpha_app: "alpha_app"
       },
       exposes: {
         Button: "./src/Button"

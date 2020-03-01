@@ -3,7 +3,7 @@ import React from "react";
 import { ThemeProvider } from "@material-ui/core";
 import { theme } from "./theme";
 
-const Page = React.lazy(() => import("host_app/Page"));
+const Page = React.lazy(() => import("alpha_app/Page"));
 
 function App() {
   return (

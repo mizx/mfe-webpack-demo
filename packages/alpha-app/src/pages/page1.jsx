@@ -1,7 +1,7 @@
 import Page from "../Page";
 import React from "react";
 
-const Dialog = React.lazy(() => import("app_mui/Dialog"));
+const Dialog = React.lazy(() => import("bravo_app/Dialog"));
 
 const Page1 = () => (
   <Page title="Dialog Demo">

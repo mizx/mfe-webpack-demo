@@ -34,11 +34,11 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "app_mui",
-      library: { type: "var", name: "app_mui" },
+      name: "bravo_app",
+      library: { type: "var", name: "bravo_app" },
       filename: "remoteEntry.js",
       remotes: {
-        host_app: "host_app"
+        alpha_app: "alpha_app"
       },
       exposes: {
         Dialog: "./src/Dialog"
