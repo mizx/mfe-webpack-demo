@@ -2,6 +2,7 @@
   "name": "mfe-demo-root",
   "private": true,
   "scripts": {
+    "build": "workspaces run build",
     "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\""
   },
   "workspaces": [
