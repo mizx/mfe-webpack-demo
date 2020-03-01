@@ -49,7 +49,7 @@ module.exports = {
         SideNav: "./src/SideNav",
         Page: "./src/Page"
       },
-      shared: ["react", "react-dom", "@material-ui/core"]
+      shared: ["react", "react-dom", "@material-ui/core", "react-router-dom"]
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html"

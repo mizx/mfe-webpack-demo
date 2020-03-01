@@ -29,6 +29,7 @@ export default function TabsComponent() {
   const match = useRouteMatch();
   const history = useHistory();
   const location = useLocation();
+  const { path: rootPath } = match;
 
   const handleChange = (event, newValue) => {
     history.push(newValue);
@@ -38,20 +39,20 @@ export default function TabsComponent() {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={location.pathname} onChange={handleChange}>
-          <Tab label="Foo" value={`${match.path}foo`} />
-          <Tab label="Bar" value={`${match.path}bar`} />
+          <Tab label="Foo" value={`${rootPath}/foo`} />
+          <Tab label="Bar" value={`${rootPath}/bar`} />
         </Tabs>
       </AppBar>
       <Switch>
-        <Route path={match.path} exact={true}>
-          <Redirect to={`${match.path}foo`} />
+        <Route path={rootPath} exact={true}>
+          <Redirect to={`${rootPath}/foo`} />
         </Route>
-        <Route path={`${match.path}foo`}>
+        <Route path={`${rootPath}/foo`}>
           <Typography component="div">
             <Box p={3}>Foo Content</Box>
           </Typography>
         </Route>
-        <Route path={`${match.path}bar`}>
+        <Route path={`${rootPath}/bar`}>
           <Typography component="div">
             <Box p={3}>Bar Content</Box>
           </Typography>

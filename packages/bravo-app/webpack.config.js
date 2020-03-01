@@ -41,9 +41,10 @@ module.exports = {
         alpha_app: "alpha_app"
       },
       exposes: {
-        Dialog: "./src/Dialog"
+        Dialog: "./src/Dialog",
+        Tabs: "./src/Tabs"
       },
-      shared: ["react", "react-dom", "@material-ui/core"]
+      shared: ["react", "react-dom", "@material-ui/core", "react-router-dom"]
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
