@@ -1,14 +1,5 @@
-### Welcome
+Welcome to the Module Federation Demo!
 
-> This is a test
+Click any of the items on the left to get started.
 
-I hope it works.
-
-**bold** _italic_
-
-```
-const foo = 'bar';
-```
-
-- foo
-- bar
+Feel free to leave me feedback: [https://github.com/mizx/mfe-webpack-demo](https://github.com/mizx/mfe-webpack-demo)
