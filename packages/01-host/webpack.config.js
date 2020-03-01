@@ -28,6 +28,10 @@ module.exports = {
         options: {
           presets: [require.resolve("@babel/preset-react")]
         }
+      },
+      {
+        test: /\.md$/,
+        loader: "raw-loader"
       }
     ]
   },
