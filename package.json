@@ -2,7 +2,8 @@
   "name": "mfe-demo-root",
   "private": true,
   "scripts": {
-    "build": "workspaces run build",
+    "build": "yarn workspaces run build",
+    "serve": "wsrun --parallel serve",
     "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\""
   },
   "workspaces": [
