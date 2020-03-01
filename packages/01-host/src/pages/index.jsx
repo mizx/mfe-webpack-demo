@@ -4,8 +4,6 @@ import React from "react";
 import { Typography } from "@material-ui/core";
 import Welcome from "./Welcome.md";
 
-console.log(Welcome);
-
 const IndexPage = () => (
   <Page title="Module Federation Demo">
     <Typography variant="body1">
