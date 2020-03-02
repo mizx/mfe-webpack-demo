@@ -13,7 +13,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: "http://localhost:3002/"
+    publicPath: "http://localhost:3003/"
   },
 
   resolve: {
@@ -34,21 +34,19 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "bravo_app",
-      library: { type: "var", name: "bravo_app" },
+      name: "app_03",
+      library: { type: "var", name: "app_03" },
       filename: "remoteEntry.js",
       remotes: {
-        alpha_app: "alpha_app"
+        app_01: "app_01"
       },
       exposes: {
-        Dialog: "./src/Dialog",
-        Tabs: "./src/Tabs"
+        Button: "./src/Button"
       },
-      shared: ["react", "react-dom", "@material-ui/core", "react-router-dom"]
+      shared: ["react", "react-dom"]
     }),
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
-      chunks: ["main"]
+      template: "./public/index.html"
     })
   ]
 };

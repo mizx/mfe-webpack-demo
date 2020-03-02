@@ -11,6 +11,6 @@ The demo is annotated so navigate through the demos and apps available.
 
 Included apps:
 
-- Alpha App: [http://localhost:3001](http://localhost:3001)
-- Bravo App: [http://localhost:3002](http://localhost:3002)
-- Charlie App: [http://localhost:3003](http://localhost:3003)
+- App #1: [http://localhost:3001](http://localhost:3001)
+- App #2: [http://localhost:3002](http://localhost:3002)
+- App #3: [http://localhost:3003](http://localhost:3003)

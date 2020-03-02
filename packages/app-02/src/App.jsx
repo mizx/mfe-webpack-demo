@@ -6,7 +6,7 @@ import React from "react";
 import Tabs from "./Tabs";
 import { theme } from "./theme";
 
-const Page = React.lazy(() => import("alpha_app/Page"));
+const Page = React.lazy(() => import("app_01/Page"));
 
 function App() {
   return (
