@@ -40,7 +40,7 @@ function DialogComponent() {
             color="primary"
             autoFocus
           >
-            Woot
+            Nice
           </Button>
         </DialogActions>
       </Dialog>
