@@ -17,6 +17,8 @@ import {
 
 import React from "react";
 
+const Button = React.lazy(() => import("app_03/Button"));
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -54,7 +56,12 @@ export default function TabsComponent() {
         </Route>
         <Route path={`${rootPath}/bar`}>
           <Typography component="div">
-            <Box p={3}>Bar Content</Box>
+            <Box p={3}>
+              Bar Content
+              <React.Suspense fallback={null}>
+                <Button>Bar Button</Button>
+              </React.Suspense>
+            </Box>
           </Typography>
         </Route>
       </Switch>

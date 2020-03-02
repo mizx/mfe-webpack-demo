@@ -38,7 +38,8 @@ module.exports = {
       library: { type: "var", name: "app_02" },
       filename: "remoteEntry.js",
       remotes: {
-        app_01: "app_01"
+        app_01: "app_01",
+        app_03: "app_03"
       },
       exposes: {
         Dialog: "./src/Dialog",
