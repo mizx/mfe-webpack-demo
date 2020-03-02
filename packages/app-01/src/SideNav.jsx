@@ -54,11 +54,11 @@ export default function SideNav() {
         <ListItem button component={Link} to="/">
           <ListItemText primary="Main" />
         </ListItem>
-        <ListItem button component={Link} to="/dialog">
-          <ListItemText primary="Dialog" />
-        </ListItem>
         <ListItem button component={Link} to="/ui-library">
           <ListItemText primary="UI Library" />
+        </ListItem>
+        <ListItem button component={Link} to="/dialog">
+          <ListItemText primary="Dialog" />
         </ListItem>
         <ListItem button component={Link} to="/routing/foo">
           <ListItemText primary="Routing" />
