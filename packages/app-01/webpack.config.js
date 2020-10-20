@@ -48,8 +48,8 @@ module.exports = () => ({
         app_03: "app_03"
       },
       exposes: {
-        SideNav: "./src/SideNav",
-        Page: "./src/Page"
+        './SideNav': "./src/SideNav",
+        './Page': "./src/Page"
       },
       shared: ["react", "react-dom", "@material-ui/core", "react-router-dom"]
     }),
