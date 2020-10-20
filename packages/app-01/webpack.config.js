@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
-module.exports = {
+module.exports = () => ({
   entry: "./src/index",
   cache: false,
 
@@ -27,11 +27,13 @@ module.exports = {
         loader: require.resolve("babel-loader"),
         options: {
           presets: [require.resolve("@babel/preset-react")]
-        }
+        },
+        exclude: [/node_modules/],
       },
       {
         test: /\.md$/,
-        loader: "raw-loader"
+        loader: "raw-loader",
+        exclude: [/node_modules/],
       }
     ]
   },
@@ -55,4 +57,4 @@ module.exports = {
       template: "./public/index.html"
     })
   ]
-};
+});
