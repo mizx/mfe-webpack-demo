@@ -43,10 +43,6 @@ module.exports = () => ({
       name: "app_01",
       library: { type: "var", name: "app_01" },
       filename: "remoteEntry.js",
-      remotes: {
-        app_02: "app_02",
-        app_03: "app_03"
-      },
       exposes: {
         './SideNav': "./src/SideNav",
         './Page': "./src/Page"

@@ -42,7 +42,8 @@ module.exports = () => ({
         app_01: "app_01"
       },
       exposes: {
-        './Button': "./src/Button"
+        './Button': "./src/Button",
+        './MyButton': './src/MyButton',
       },
       shared: ["react", "react-dom"]
     }),
