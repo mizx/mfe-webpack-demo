@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const ModuleFederationPlugin = require("webpack").container.ModuleFederationPlugin;
 
 module.exports = () => ({
   entry: "./src/index",
@@ -7,13 +7,10 @@ module.exports = () => ({
 
   mode: "development",
   devtool: "source-map",
-
-  optimization: {
-    minimize: false
-  },
+  target: 'web',
 
   output: {
-    publicPath: "http://localhost:3001/"
+    publicPath: "auto"
   },
 
   resolve: {
@@ -24,11 +21,11 @@ module.exports = () => ({
     rules: [
       {
         test: /\.jsx?$/,
-        loader: require.resolve("babel-loader"),
-        options: {
-          presets: [require.resolve("@babel/preset-react")]
-        },
+        loader: "babel-loader",
         exclude: [/node_modules/],
+        options: {
+          presets: ["@babel/preset-react"]
+        },
       },
       {
         test: /\.md$/,
@@ -47,7 +44,23 @@ module.exports = () => ({
         './SideNav': "./src/SideNav",
         './Page': "./src/Page"
       },
-      shared: ["react", "react-dom", "@material-ui/core", "react-router-dom"]
+      shared: {
+        react: {
+          import: 'react',
+          shareKey: 'react',
+          shareScope: 'default',
+          singleton: true,
+        },
+        'react-dom': {
+          singleton: true,
+        },
+        "@material-ui/core": {
+          singleton: true,
+        },
+        "react-router-dom": {
+          singleton: true,
+        },
+      }
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html"
