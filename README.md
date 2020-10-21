@@ -1,9 +1,17 @@
 # Getting Started
 
+## Changes in this Fork:
+
+- Dynamic loading remotes without hardcoding them in the webpack config of the main app loading the external modules
+
+## Install
+
 ```sh
 yarn install
 yarn start
 ```
+
+## Run it
 
 Open [http://localhost:3001](http://localhost:3001).
 
