@@ -52,7 +52,13 @@ module.exports = () => ({
         'react-dom': {
           singleton: true,
         },
-      }
+        'regenerator-runtime': {
+          singleton: true,
+        },
+        'fm-loader': {
+          singleton: true,
+        },
+      },
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html"

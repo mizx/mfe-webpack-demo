@@ -60,6 +60,12 @@ module.exports = () => ({
         "react-router-dom": {
           singleton: true,
         },
+        'regenerator-runtime': {
+          singleton: true,
+        },
+        'fm-loader': {
+          singleton: true,
+        },
       }
     }),
     new HtmlWebpackPlugin({

@@ -1,10 +1,10 @@
 import { deferred } from "./deferred";
-import { loadJS } from "./loader";
+import { loadScript } from "./loader";
 
-export const loadRemote = async remote => {
+export const loadAndInitiateWebpackContainer = async remote => {
   const { name, url } = remote;
 
-  await loadJS(url);
+  await loadScript(url);
 
   // Initializes the share scope. This fills it with known provided modules from this build and all remotes
   await __webpack_init_sharing__("default");
@@ -19,7 +19,7 @@ export const loadRemote = async remote => {
   return container;
 }
 
-export const loadComponent = ({ remote = {}, component } = {}) => {
+export const loadFromRemote = ({ remote = {}, component } = {}) => {
   const { name, url } = remote;
 
   if (!url) throw new Error("Missing remote url");
@@ -28,7 +28,7 @@ export const loadComponent = ({ remote = {}, component } = {}) => {
 
   return async () => {
 
-    const container = await loadRemote({ url, name });
+    const container = await loadAndInitiateWebpackContainer({ url, name });
 
     if (!container.get)
       throw new Error(`Cannot load external remote: ${name} from url: ${url}`);

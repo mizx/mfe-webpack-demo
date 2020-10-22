@@ -2,7 +2,7 @@ import { deferred } from './deferred';
 
 const scriptsCache = {};
 
-export const loadJS = async (src) => {
+export const loadScript = async (src) => {
 
   if (scriptsCache[src]) {
     return scriptsCache;

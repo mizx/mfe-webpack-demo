@@ -18,5 +18,8 @@
     "start": "webpack --watch",
     "build": "webpack --mode production",
     "serve": "serve dist -p 3003"
+  },
+  "devDependencies": {
+    "fm-loader": "file:../local_modules/fm-loader/"
   }
 }

@@ -51,6 +51,12 @@ module.exports = () => ({
           shareScope: 'default',
           singleton: true,
         },
+        'regenerator-runtime': {
+          singleton: true,
+        },
+        'fm-loader': {
+          singleton: true,
+        },
         'react-dom': {
           singleton: true,
         },
