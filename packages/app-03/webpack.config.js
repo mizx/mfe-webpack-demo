@@ -1,19 +1,16 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const ModuleFederationPlugin = require("webpack").container.ModuleFederationPlugin;
 
-module.exports = {
+module.exports = () => ({
   entry: "./src/index",
   cache: false,
 
   mode: "development",
   devtool: "source-map",
-
-  optimization: {
-    minimize: false
-  },
+  target: 'web',
 
   output: {
-    publicPath: "http://localhost:3003/"
+    publicPath: "auto"
   },
 
   resolve: {
@@ -24,10 +21,11 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        loader: require.resolve("babel-loader"),
+        loader: "babel-loader",
+        exclude: [/node_modules/],
         options: {
-          presets: [require.resolve("@babel/preset-react")]
-        }
+          presets: ["@babel/preset-react"]
+        },
       }
     ]
   },
@@ -38,15 +36,32 @@ module.exports = {
       library: { type: "var", name: "app_03" },
       filename: "remoteEntry.js",
       remotes: {
-        app_01: "app_01"
+        app_01: 'app_01',
       },
       exposes: {
-        Button: "./src/Button"
+        './Button': "./src/Button",
+        './MyButton': './src/MyButton',
       },
-      shared: ["react", "react-dom"]
+      shared: {
+        react: {
+          import: 'react',
+          shareKey: 'react',
+          shareScope: 'default',
+          singleton: true,
+        },
+        'react-dom': {
+          singleton: true,
+        },
+        'regenerator-runtime': {
+          singleton: true,
+        },
+        'fm-loader': {
+          singleton: true,
+        },
+      },
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html"
     })
   ]
-};
+});

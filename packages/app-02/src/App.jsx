@@ -1,16 +1,23 @@
 import { Divider, ThemeProvider, Typography } from "@material-ui/core";
 
 import Dialog from "./Dialog";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import Tabs from "./Tabs";
 import { theme } from "./theme";
+import { loadFromRemote } from 'fm-loader';
 
-const Page = React.lazy(() => import("app_01/Page"));
+const Page = React.lazy(loadFromRemote({
+  remote: {
+    url: 'http://localhost:3001/remoteEntry.js',
+    name: 'app_01',
+  },
+  component: 'Page',
+}));
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <ThemeProvider theme={theme}>
         <React.Suspense fallback={null}>
           <Page title="Material UI App">
@@ -22,7 +29,7 @@ function App() {
           </Page>
         </React.Suspense>
       </ThemeProvider>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

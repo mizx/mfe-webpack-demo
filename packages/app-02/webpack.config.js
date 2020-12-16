@@ -1,19 +1,17 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const ModuleFederationPlugin = require("webpack").container.ModuleFederationPlugin;
 
-module.exports = {
+module.exports = () => ({
   entry: "./src/index",
   cache: false,
 
   mode: "development",
   devtool: "source-map",
 
-  optimization: {
-    minimize: false
-  },
+  target: 'web',
 
   output: {
-    publicPath: "http://localhost:3002/"
+    publicPath: "auto"
   },
 
   resolve: {
@@ -24,10 +22,11 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        loader: require.resolve("babel-loader"),
+        loader: "babel-loader",
         options: {
-          presets: [require.resolve("@babel/preset-react")]
-        }
+          presets: ["@babel/preset-react"]
+        },
+        exclude: [/node_modules/],
       }
     ]
   },
@@ -42,14 +41,36 @@ module.exports = {
         app_03: "app_03"
       },
       exposes: {
-        Dialog: "./src/Dialog",
-        Tabs: "./src/Tabs"
+        './Dialog': "./src/Dialog",
+        './Tabs': "./src/Tabs"
       },
-      shared: ["react", "react-dom", "@material-ui/core", "react-router-dom"]
+      shared: {
+        react: {
+          import: 'react',
+          shareKey: 'react',
+          shareScope: 'default',
+          singleton: true,
+        },
+        'react-dom': {
+          singleton: true,
+        },
+        "@material-ui/core": {
+          singleton: true,
+        },
+        "react-router-dom": {
+          singleton: true,
+        },
+        'regenerator-runtime': {
+          singleton: true,
+        },
+        'fm-loader': {
+          singleton: true,
+        },
+      }
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
       chunks: ["main"]
     })
   ]
-};
+});

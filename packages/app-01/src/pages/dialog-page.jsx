@@ -4,8 +4,9 @@ import DialogMarkdown from "../docs/Dialog.md";
 import Markdown from "markdown-to-jsx";
 import Page from "../Page";
 import React from "react";
+import { loadFromRemote } from "fm-loader";
 
-const Dialog = React.lazy(() => import("app_02/Dialog"));
+const Dialog = React.lazy(loadFromRemote({ remote: { url: 'http://localhost:3002/remoteEntry.js', name: 'app_02' }, component: 'Dialog' }));
 
 const DialogPage = () => (
   <Page title="Dialog Demo">

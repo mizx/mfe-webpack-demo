@@ -1,6 +1,6 @@
 import { CssBaseline, createStyles, makeStyles } from "@material-ui/core";
 
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import Routes from "./Routes";
 import SideNav from "./SideNav";
@@ -17,13 +17,13 @@ function App() {
   const classes = useStyles();
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <CssBaseline />
       <div className={classes.root}>
         <SideNav />
         <Routes />
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
