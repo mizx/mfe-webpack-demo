@@ -1,4 +1,3 @@
-import { deferred } from "./deferred";
 import { loadScript } from "./loader";
 
 export const loadAndInitiateWebpackContainer = async remote => {
@@ -46,4 +45,44 @@ export const loadFromRemote = ({ remote = {}, component } = {}) => {
 
     return Module;
   };
+};
+
+const containerCache = new Map();
+
+export const loadRemote = async (federatedModuleDescriptor) => {
+  const cachedProxy = containerCache.get(federatedModuleDescriptor);
+  if (cachedProxy) {
+    return cachedProxy;
+  }
+
+  const [name, url] = federatedModuleDescriptor.split(/@/);
+  const container = await loadAndInitiateWebpackContainer({
+    url,
+    name
+  });
+
+  const cache = new Map();
+
+  const getModule = async component => {
+    const componentFromCache = cache.get(component);
+    if (componentFromCache) return componentFromCache;
+    component = `./${component}`;
+    const factory = await container.get(component);
+    if (!factory) throw new Error(`Cannot load ${component} in remote: ${name} from url ${url}`);
+    const Module = factory();
+    cache.set(component, Module);
+    return Module;
+  };
+
+  const p = new Proxy({}, {
+    get(target, prop) {
+      if (prop === 'then') return undefined; // to avoid auto unwrap async/await return
+
+      return getModule(prop);
+    }
+  });
+
+  containerCache.set(federatedModuleDescriptor, p);
+
+  return p;
 };
