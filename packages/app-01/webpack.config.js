@@ -1,19 +1,16 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const ModuleFederationPlugin = require("webpack").container.ModuleFederationPlugin;
 
-module.exports = {
+module.exports = () => ({
   entry: "./src/index",
   cache: false,
 
   mode: "development",
   devtool: "source-map",
-
-  optimization: {
-    minimize: false
-  },
+  target: 'web',
 
   output: {
-    publicPath: "http://localhost:3001/"
+    publicPath: "auto"
   },
 
   resolve: {
@@ -24,14 +21,16 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        loader: require.resolve("babel-loader"),
+        loader: "babel-loader",
+        exclude: [/node_modules/],
         options: {
-          presets: [require.resolve("@babel/preset-react")]
-        }
+          presets: ["@babel/preset-react"]
+        },
       },
       {
         test: /\.md$/,
-        loader: "raw-loader"
+        loader: "raw-loader",
+        exclude: [/node_modules/],
       }
     ]
   },
@@ -41,18 +40,36 @@ module.exports = {
       name: "app_01",
       library: { type: "var", name: "app_01" },
       filename: "remoteEntry.js",
-      remotes: {
-        app_02: "app_02",
-        app_03: "app_03"
-      },
       exposes: {
-        SideNav: "./src/SideNav",
-        Page: "./src/Page"
+        './SideNav': "./src/SideNav",
+        './Page': "./src/Page"
       },
-      shared: ["react", "react-dom", "@material-ui/core", "react-router-dom"]
+      shared: {
+        react: {
+          import: 'react',
+          shareKey: 'react',
+          shareScope: 'default',
+          singleton: true,
+        },
+        'regenerator-runtime': {
+          singleton: true,
+        },
+        'fm-loader': {
+          singleton: true,
+        },
+        'react-dom': {
+          singleton: true,
+        },
+        "@material-ui/core": {
+          singleton: true,
+        },
+        "react-router-dom": {
+          singleton: true,
+        },
+      }
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html"
     })
   ]
-};
+});

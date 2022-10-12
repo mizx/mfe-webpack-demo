@@ -4,7 +4,9 @@
   "scripts": {
     "build": "yarn workspaces run build",
     "serve": "wsrun --parallel serve",
-    "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\""
+    "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\"",
+    "clean": "rm -rf packages/app-01/dist packages/app-02/dist packages/app-03/dist",
+    "build:fm-loader": "cd packages/local_modules/fm-loader && npm run clean && npm run build"
   },
   "workspaces": [
     "packages/*"
